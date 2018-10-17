@@ -27,6 +27,7 @@ public void setProductname(String productname) {
 	this.productname = productname;
 }
 public String getDescription() {
+	
 	return description;
 }
 public void setDescription(String description) {
