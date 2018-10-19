@@ -5,16 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="<c:url value='/resource/css/bootstrap.css'></c:url>">
 
+<link rel="stylesheet" href="<c:url value='/resource/css/bootstrap.css'></c:url>">
+<link rel="stylesheet" href="<c:url value='/resource/css/navbar.css'></c:url>">
 <!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-<script
-	src="js/bootstrap.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
+<script	src="js/bootstrap.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
