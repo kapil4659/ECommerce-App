@@ -13,6 +13,9 @@ public  PageController()
 
 	@RequestMapping("/")
 	public String home() {
+	
 		return "home";
+	
 	}
+
 }

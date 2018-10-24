@@ -29,8 +29,8 @@ public class App
        product.setDescription("Senheiser");
        product.setPrice(6000);
        product.setQuantity(8);
-    //   productService.addProduct(product);
-	   productService.deleteProduct(4);
+       productService.addProduct(product);
+	//   productService.deleteProduct(4);
     //  productService.updateProduct(product);
      // Product p= productService.getProduct(1);
        for(Product p:products) {

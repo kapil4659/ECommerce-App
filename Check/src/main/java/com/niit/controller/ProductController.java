@@ -1,4 +1,7 @@
-package com.niit.controllers;
+package com.niit.controller;
+
+
+
 
 import java.util.List;
 
@@ -8,9 +11,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.niit.models.Product;
+import com.niit.services.ProductService;
+
+
+
+
+
 @Controller
-public class ProductController<Product> {
-@Autowired
+public class ProductController {
+
+	@Autowired
 	private ProductService productService;
 	public ProductController()
 	{
@@ -34,17 +45,17 @@ return "viewproduct";
 //	model.addAttribute("products",products);
 //return "listofproducts";
 //}
-@RequestMapping(value="/all/getproduct")
-public String getProduct1(@RequestParam int id,Model model) {
-	Product product=productService.getProduct(id);
-	model.addAttribute("productAttr",product);
-return "viewport";
-}
-@RequestMapping(value="/admin/deleteproduct")
-public String deleteProduct(@RequestParam int id) {
-	productService.deleteProduct(id);
-	return "redirect:/all/getallproducts";
-}
+//@RequestMapping(value="/all/getproduct")
+//public String getProduct1(@RequestParam int id,Model model) {
+//	Product product=productService.getProduct(id);
+//	model.addAttribute("productAttr",product);
+//return "view";
+//}
+//@RequestMapping(value="/admin/deleteproduct")
+//public String deleteProduct(@RequestParam int id) {
+//	productService.deleteProduct(id);
+//	return "redirect:/all/getallproducts";
+//}
 
 
 }
