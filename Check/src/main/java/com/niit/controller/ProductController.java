@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,23 +41,22 @@ public String getProduct(@RequestParam int id,Model model) {
 	model.addAttribute("productAttr",product);
 return "viewproduct";
 }
-//public string getAllProducts(Model model) {
-//	List<Product> products=productService.getAllProducts();
-//	model.addAttribute("products",products);
-//return "listofproducts";
-//}
-//@RequestMapping(value="/all/getproduct")
-//public String getProduct1(@RequestParam int id,Model model) {
-//	Product product=productService.getProduct(id);
-//	model.addAttribute("productAttr",product);
-//return "view";
-//}
-//@RequestMapping(value="/admin/deleteproduct")
-//public String deleteProduct(@RequestParam int id) {
-//	productService.deleteProduct(id);
-//	return "redirect:/all/getallproducts";
-//}
 
-
+@RequestMapping(value="/admin/deleteproduct")
+public String deleteProduct(@RequestParam int id) {
+	productService.deleteProduct(id);
+	return "redirect:/all/getallproducts";
+}
+@RequestMapping(value="/admin/getproductform")
+public String getproductForm(Model model) {
+	Product p=new Product();
+	model.addAttribute("product",p);
+	return "productform";
+}
+@RequestMapping(value="/admin/addproduct")
+public String addProduct(@ModelAttribute Product product) {
+	productService.addProduct(product);
+	return "redirect/all/getallproducts";
+}
 }
 
