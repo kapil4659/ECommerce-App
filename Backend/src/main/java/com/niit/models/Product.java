@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+
 
 @Entity
 public class Product {
@@ -11,9 +15,11 @@ public class Product {
 @GeneratedValue(strategy=GenerationType.AUTO)
 private int id;
 private String productname;
-private String description;
+private String productdesc;
 private int quantity;
 private double price;
+@ManyToOne
+private Category category;
 public int getId() {
 	return id;
 }
@@ -26,12 +32,11 @@ public String getProductname() {
 public void setProductname(String productname) {
 	this.productname = productname;
 }
-public String getDescription() {
-	
-	return description;
+public String getProductdesc() {
+	return productdesc;
 }
-public void setDescription(String description) {
-	this.description = description;
+public void setProductdesc(String productdesc) {
+	this.productdesc = productdesc;
 }
 public int getQuantity() {
 	return quantity;
@@ -45,4 +50,13 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
+public Category getCategory() {
+	return category;
 }
+public void setCategory(Category category) {
+	System.out.println("Setter method for category property in Product");
+	this.category = category;
+}
+
+}
+

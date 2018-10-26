@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
+import com.niit.models.Category;
 import com.niit.models.Product;
 
 @Configuration
@@ -42,7 +43,7 @@ public class DBConfiguration {
 		hibernate.setProperty("hibernate.hbm2ddl.auto", "update");
 		hibernate.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernate);
-		Class classes[] = new Class[] { Product.class };
+		Class classes[] = new Class[] { Product.class, Category.class };
 		System.out.println("Session Factory " + lsf);
 		System.out.println("SessionFactory Bean is created");
 		return lsf.addAnnotatedClasses(classes).buildSessionFactory();

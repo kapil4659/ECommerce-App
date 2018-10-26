@@ -13,29 +13,56 @@
 <c:url value='/admin/addproduct' var="url"></c:url>
 <form:form action="${url }" method="post" modelAttribute="porduct">
 	<table>
-	<tr>
-	<td>Enter Product Name</td>
-	<td><form:input path="productname"/>
-	</td>
-	</tr>
-
-	<tr>
-	<td>Enter Product Description</td>
-	<td><form:input path="productdesc"/>
-	</td>
-	</tr>
-	<tr><td>Enter Product Price</td>
-	<td>
-	<form:input path="price"/></td>
-	</tr>
-	<tr>
-	<td>Enter Product Quantity</td>
-	<td><form:input path="quantity"/></td>
-	</tr>
-	<tr><td>
-	<input type="submit" value="Add Product"></td>
-	<td></td>
-	</tr>	
+	
+		<tr>
+			<td>Enter Product Name</td>
+			<td>
+			<form:input path="productname"/>
+			<form:errors path="productname" cssStyle="color:red"></form:errors>
+			</td>
+		</tr>
+        <tr>
+			<td>Enter Product Description</td>
+			<td>
+			<form:textarea path="productdesc"/>
+			<form:errors path="productdesc" cssStyle="color:red"></form:errors>
+			</td>
+		</tr>
+        <tr>
+			<td>Enter Product Price</td>
+			<td>
+			<form:input path="price"/>
+			<form:errors path="price" cssStyle="color:red"></form:errors>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Enter Product Quantity</td>
+			<td>
+			<form:input path="quantity"/>
+			<form:errors path="quantity" cssStyle="color:red"></form:errors>
+			</td>
+		</tr>
+		
+		<tr>
+		<td>Select Category</td>
+		<td><form:select path="category.id"><!-- product.category.id=6 -->
+		<form:option value="1">Headphones</form:option>
+		<form:option value="2">Mobile phones</form:option>
+		<form:option value="3">Power Banks</form:option>
+		<form:option value="4">Back covers</form:option>
+		<form:option value="5">Other Accessories</form:option>
+		
+		</form:select>
+		<form:errors path="category" cssStyle="color:red"></form:errors>
+		</td>
+		</tr>
+		
+		<tr><td>
+		<input type="submit" value="Add Product">  </td>
+		<td></td>
+		</tr>
+		
 	</table>
 </form:form>
 </div>

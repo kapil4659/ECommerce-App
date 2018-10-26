@@ -4,7 +4,6 @@ package com.niit.controller;
 
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +11,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.niit.models.Product;
 import com.niit.services.ProductService;
 
@@ -65,10 +63,11 @@ public String getUpdateProductForm(@RequestParam int id,Model model) {
 	model.addAttribute("product",product);
 	return "updateproductform";
 }
+
 @RequestMapping(value="/admin/updateproduct")
-public String updateProduct(@Valid @ModelAttribute Product product,BindingResult result) {
-	if(result.hasErrors()) {
-		return"updateprodutcform";
+public String updateProduct( @ModelAttribute Product product,BindingResult result){
+	if(result.hasErrors()){
+		return "updateproductform";
 	}
 	productService.updateProduct(product);
 	return "redirect/all/getallproducts";

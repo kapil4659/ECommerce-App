@@ -9,40 +9,49 @@
 <body>
 	<div class="container">
 	<c:url value='/admin/updateproduct' var="url"></c:url>
-	<form:form modelAttribute="product" action="${url }">
-	<table>
-	<tr>
-	<td></td>
-	<td><form:hidden path="id"></form:hidden></td>
-	</tr>
-	<tr>
-	<td>Enter Product name</td>
-	<td>
-	<form:input path="productname"/>
-	
-	</td></tr>
-	
-	
-	<tr>
-	<form:textarea path="productdesc"/>
-	<form:errors path="productdesc" cssStyle="color:red"></form:errors>
-	</td>
-	<tr>
-	<td>EnterProduct Price</td>
-	<td>
-	<form:input path="price"/>
-	<form:errors path="price" cssStyle="color:red"></form:errors>
-	</td>
-	<tr>
-		<td>Enter Product Quantity</td>
-	<td>
-		<form:input action="quantity"></form:input>
-		<form:errors path="quantity" cssStyle="color:red"></form:errors>
-	</td>
-	</tr><tr><td>
-	</td>
-	</tr>
-</table>
+ 	<form:form modelAttribute="product" action="${url }">
+<table>
+	   <tr>
+	   <td></td>
+	   <td><form:hidden path="id"></form:hidden></td>
+	   </tr>
+		<tr>
+			<td>Enter Product Name</td>
+			<td>
+			<form:input path="productname"/>
+			<form:errors path="productname" cssStyle="color:red"></form:errors>
+
+			</td>
+		</tr>
+        <tr>
+			<td>Enter Product Description</td>
+			<td>
+			<form:textarea path="productdesc"/>
+			<form:errors path="productdesc" cssStyle="color:red"></form:errors>
+			</td>
+		</tr>
+        <tr>
+			<td>Enter Product Price</td>
+			<td>
+			<form:input path="price"/>
+			<form:errors path="price" cssStyle="color:red"></form:errors>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Enter Product Quantity</td>
+			<td>
+			<form:input path="quantity"/>
+			<form:errors path="quantity" cssStyle="color:red"></form:errors>
+			</td>
+		</tr>
+		<tr><td>
+		<input type="submit" value="Edit Product">  </td>
+		<td></td>
+		</tr>
+		
+	</table>
+</form:form>
 </div>
 </body>
 </html>

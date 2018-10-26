@@ -24,17 +24,17 @@ public class App
        ProductService productService = (ProductService) context.getBean("productServiceImpl");
        Product product = new Product();
        List<Product> products= productService.getAllProducts();
-       product.setId(4);
-       product.setProductname("HeadPhone");
-       product.setDescription("Senheiser");
-       product.setPrice(6000);
-       product.setQuantity(8);
-       productService.addProduct(product);
+       product.setId(5);
+       product.setProductname("Phone");
+       product.setProductdesc("Samsung");
+       product.setPrice(12000);
+       product.setQuantity(3);
+     //  productService.addProduct(product);
 	//   productService.deleteProduct(4);
-    //  productService.updateProduct(product);
+      productService.updateProduct(product);
      // Product p= productService.getProduct(1);
        for(Product p:products) {
-     System.out.println(p.getId()+" "+p.getProductname()+" "+p.getDescription()+" "+p.getQuantity()+" "+p.getPrice());
+     System.out.println(p.getId()+" "+p.getProductname()+" "+p.getProductdesc()+" "+p.getQuantity()+" "+p.getPrice());
     }
     }
 }

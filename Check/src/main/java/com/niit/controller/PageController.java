@@ -11,7 +11,7 @@ public  PageController()
 }
 
 
-	@RequestMapping("/")
+	@RequestMapping(value= {"/","/home"})
 	public String home() {
 	
 		return "home";
