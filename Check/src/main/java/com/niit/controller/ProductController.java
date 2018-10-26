@@ -8,6 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -56,6 +57,20 @@ public String getproductForm(Model model) {
 @RequestMapping(value="/admin/addproduct")
 public String addProduct(@ModelAttribute Product product) {
 	productService.addProduct(product);
+	return "redirect/all/getallproducts";
+}
+@RequestMapping(value="/admin/getupdateproductform")
+public String getUpdateProductForm(@RequestParam int id,Model model) {
+	Product product=productService.getProduct(id);
+	model.addAttribute("product",product);
+	return "updateproductform";
+}
+@RequestMapping(value="/admin/updateproduct")
+public String updateProduct(@Valid @ModelAttribute Product product,BindingResult result) {
+	if(result.hasErrors()) {
+		return"updateprodutcform";
+	}
+	productService.updateProduct(product);
 	return "redirect/all/getallproducts";
 }
 }

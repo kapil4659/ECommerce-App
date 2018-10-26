@@ -29,9 +29,9 @@
 			   <td>${p.productname}</td> 
 			   <td>${p.price}</td> 
 			   <td>
-			   <a href="<c:url value='/all/get/product?id=${p.id}'></c:url>"><span class="glyphicon glyphicon-info-sign"></span></a>
+			   <a href="<c:url value='/all/getproduct?id=${p.id}'></c:url>"><span class="glyphicon glyphicon-info-sign"></span></a>
 			   <a href="<c:url value='/admin/deleteproduct?id=${p.id}'></c:url>"><span class="glyphicon glyphicon-trash"></span></a>
-			   <a href=""><span class="glyphicon glyphicon-pencil"></span></a>
+			   <a href="<c:url value='/admin/getupdateproductform?id=${p.id}'></c:url>"><span class="glyphicon glyphicon-plus"></span></a>
 			   
 			   
 			   </td>

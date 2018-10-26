@@ -18,21 +18,19 @@
 	<td><form:input path="productname"/>
 	</td>
 	</tr>
-<!-- 	<td><input type="text" name="productname"></td> -->
-<!-- 	</tr> -->
-<!-- 	<tr> -->
-<!-- 	<td><input type="text" name="productname"></td> -->
-<!-- 	</tr> -->
+
 	<tr>
 	<td>Enter Product Description</td>
-	<td><textarea name="productdesc"></textarea></td>
+	<td><form:input path="productdesc"/>
+	</td>
 	</tr>
 	<tr><td>Enter Product Price</td>
-	<td><input type="text" name="price"></td>
+	<td>
+	<form:input path="price"/></td>
 	</tr>
 	<tr>
 	<td>Enter Product Quantity</td>
-	<td><input type="text" name="quantity"></td>
+	<td><form:input path="quantity"/></td>
 	</tr>
 	<tr><td>
 	<input type="submit" value="Add Product"></td>
