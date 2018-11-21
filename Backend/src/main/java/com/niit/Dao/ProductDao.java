@@ -1,4 +1,4 @@
-package com.niit.ProductDao;
+package com.niit.Dao;
 
 import java.util.List;
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<link rel="stylesheet" href="<c:url value='/resources/css/registrationform.css'></c:url>">
+	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,21 +9,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet"
-	href="<c:url value='/resources/css/navbar.css'></c:url>">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
-<link href="https://fonts.googleapis.com/css?family=Racing+Sans+One"
-	rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
 <title>Insert title here</title>
 </head>
+
 <body>
 	<nav class="navbar navbar-light " style="background-color:#02e3fc; ">
 	<div class="container-fluid">
@@ -100,7 +99,7 @@
 	<ul class="nav navbar-nav">
 		<li class="dropdown"><a href="#" class="dropdown-toggle"
 			data-toggle="dropdown" id="dropdrownMenu1" role="button"
-			aria-haspopup="true" aria-expanded="false">Mobile Accessories <span
+			aria-haspopup="true" aria-expanded="true">Mobile Accessories <span
 				class="caret"></span></a>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 				<li><a href="#">Earphones</a></li>

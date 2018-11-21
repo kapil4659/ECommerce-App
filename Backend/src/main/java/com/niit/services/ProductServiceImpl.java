@@ -5,7 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.niit.ProductDao.ProductDao;
+import com.niit.Dao.ProductDao;
+import com.niit.models.Category;
 import com.niit.models.Product;
 @Repository
 public  class ProductServiceImpl implements ProductService{
@@ -44,6 +45,12 @@ public  class ProductServiceImpl implements ProductService{
 	public List<Product> getAllProducts() {
 		
 		return  productdao.getAllProducts(); 
+	}
+
+	@Override
+	public List<Category> getAllCategories() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

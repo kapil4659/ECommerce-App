@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
-     <%@ include file="header.jsp" %>
+	pageEncoding="ISO-8859-1"%>
+<%@ include file="header.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,9 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- using action attribute we are going to call handler method -->
 <div class="container">
 <c:url value='/admin/addproduct' var="url"></c:url>
-<form:form action="${url }" method="post" modelAttribute="porduct">
+
+<form:form action="${url }" method="post" modelAttribute="product" enctype="multipart/form-data"><!-- newly created product object -->
 	<table>
 	
 		<tr>
@@ -47,24 +48,26 @@
 		<tr>
 		<td>Select Category</td>
 		<td><form:select path="category.id"><!-- product.category.id=6 -->
-		<form:option value="1">Headphones</form:option>
-		<form:option value="2">Mobile phones</form:option>
-		<form:option value="3">Power Banks</form:option>
-		<form:option value="4">Back covers</form:option>
-		<form:option value="5">Other Accessories</form:option>
+		<c:forEach items="${categories}" var="c"><!-- c is an Object of Type Category -->
+		<form:option value="${c.id }">${c.categoryname }</form:option>
 		
+		</c:forEach>
+	
 		</form:select>
 		<form:errors path="category" cssStyle="color:red"></form:errors>
 		</td>
 		</tr>
-		
+		<tr>
+		<td>Upload an image</td>
+		<td><form:input type="file" path="image" ></form:input></td>
+		</tr>
 		<tr><td>
 		<input type="submit" value="Add Product">  </td>
 		<td></td>
 		</tr>
 		
 	</table>
-</form:form>
-</div>
+	</form:form>
+	</div>
 </body>
 </html>
